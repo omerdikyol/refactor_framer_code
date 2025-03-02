@@ -1,0 +1,16 @@
+{
+  "name": "refactor-framer-code",
+  "version": "1.0.0",
+  "description": "Test harness for comparing original and refactored Framer components",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "framer-motion": "^12.4.7"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
