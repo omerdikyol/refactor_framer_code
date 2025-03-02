@@ -14,7 +14,7 @@ export interface DotProps {
   /** Y coordinate on the background image */
   dotY: number;
   /** URL to navigate to when dot is clicked */
-  linkUrl: string;
+  targetURL: string;
   /** Text to display in the tooltip */
   hoverText: string;
   /** Currently hovered dot ID */
@@ -25,6 +25,10 @@ export interface DotProps {
   aspectRatio: number;
   /** Reference to the container element */
   containerRef: React.RefObject<HTMLDivElement>;
+  /** Whether the dot is visible */
+  isVisible?: boolean;
+  /** Whether to open the URL in a new window */
+  isNewWindow?: boolean;
 }
 
 /**
@@ -37,12 +41,14 @@ const Dot: React.FC<DotProps> = ({
   x,
   dotX,
   dotY,
-  linkUrl,
+  targetURL,
   hoverText,
   hoveredDot,
   setHoveredDot,
   aspectRatio,
   containerRef,
+  isVisible = true,
+  isNewWindow = false,
 }) => {
   // Use refs to store DOM measurements
   const dotRef = useRef<HTMLDivElement>(null);
@@ -102,12 +108,19 @@ const Dot: React.FC<DotProps> = ({
     e.stopPropagation();
 
     if (hoveredDot === id) {
-      window.location.href = linkUrl;
+      if (isNewWindow) {
+        window.open(targetURL, '_blank');
+      } else {
+        window.location.href = targetURL;
+      }
     } else {
       setHoveredDot(id);
     }
   };
 
+  // Don't render if not visible
+  if (!isVisible) return null;
+  
   return (
     <motion.div
       ref={dotRef}

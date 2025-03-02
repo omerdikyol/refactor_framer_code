@@ -18,6 +18,14 @@ export interface DotConfig {
   textProp: string;
   /** Default text if the prop is not provided */
   defaultText: string;
+  /** Property name for the visibility in the props object */
+  visibleProp?: string;
+  /** Default visibility if the prop is not provided */
+  defaultVisible?: boolean;
+  /** Property name for opening in new window in the props object */
+  newWindowProp?: string;
+  /** Default new window setting if the prop is not provided */
+  defaultNewWindow?: boolean;
 }
 
 /**
@@ -39,6 +47,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textScholarship",
     defaultText: "Scholarship",
+    visibleProp: "visibleScholarship",
+    defaultVisible: true,
+    newWindowProp: "newWindowScholarship",
+    defaultNewWindow: false,
   },
   {
     id: "2025poster",
@@ -49,6 +61,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "text2025Poster",
     defaultText: "2025 Poster",
+    visibleProp: "visible2025Poster",
+    defaultVisible: true,
+    newWindowProp: "newWindow2025Poster",
+    defaultNewWindow: false,
   },
   {
     id: "2025calendar",
@@ -59,6 +75,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "text2025Calendar",
     defaultText: "2025 Calendar",
+    visibleProp: "visible2025Calendar",
+    defaultVisible: true,
+    newWindowProp: "newWindow2025Calendar",
+    defaultNewWindow: false,
   },
   {
     id: "elva",
@@ -69,6 +89,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textElva",
     defaultText: "Elva",
+    visibleProp: "visibleElva",
+    defaultVisible: true,
+    newWindowProp: "newWindowElva",
+    defaultNewWindow: false,
   },
   {
     id: "computer",
@@ -79,6 +103,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textComputer",
     defaultText: "Computer",
+    visibleProp: "visibleComputer",
+    defaultVisible: true,
+    newWindowProp: "newWindowComputer",
+    defaultNewWindow: false,
   },
   {
     id: "bryanphoto",
@@ -89,6 +117,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textBryanPhoto",
     defaultText: "Bryan Photo",
+    visibleProp: "visibleBryanPhoto",
+    defaultVisible: true,
+    newWindowProp: "newWindowBryanPhoto",
+    defaultNewWindow: false,
   },
   {
     id: "books",
@@ -99,6 +131,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textBooks",
     defaultText: "Books",
+    visibleProp: "visibleBooks",
+    defaultVisible: true,
+    newWindowProp: "newWindowBooks",
+    defaultNewWindow: false,
   },
   {
     id: "headphones",
@@ -109,6 +145,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textHeadphones",
     defaultText: "Headphones",
+    visibleProp: "visibleHeadphones",
+    defaultVisible: true,
+    newWindowProp: "newWindowHeadphones",
+    defaultNewWindow: false,
   },
   {
     id: "bookshelf",
@@ -119,6 +159,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textBookshelf",
     defaultText: "Bookshelf",
+    visibleProp: "visibleBookshelf",
+    defaultVisible: true,
+    newWindowProp: "newWindowBookshelf",
+    defaultNewWindow: false,
   },
   {
     id: "phone",
@@ -129,6 +173,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textPhone",
     defaultText: "Phone",
+    visibleProp: "visiblePhone",
+    defaultVisible: true,
+    newWindowProp: "newWindowPhone",
+    defaultNewWindow: false,
   },
   {
     id: "hoodie",
@@ -139,6 +187,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textHoodie",
     defaultText: "Hoodie",
+    visibleProp: "visibleHoodie",
+    defaultVisible: true,
+    newWindowProp: "newWindowHoodie",
+    defaultNewWindow: false,
   },
   {
     id: "mic",
@@ -149,6 +201,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textMic",
     defaultText: "Mic",
+    visibleProp: "visibleMic",
+    defaultVisible: true,
+    newWindowProp: "newWindowMic",
+    defaultNewWindow: false,
   },
   {
     id: "polaroids",
@@ -159,6 +215,10 @@ const dotConfigs: DotConfig[] = [
     defaultLink: "#",
     textProp: "textPolaroids",
     defaultText: "Polaroids",
+    visibleProp: "visiblePolaroids",
+    defaultVisible: true,
+    newWindowProp: "newWindowPolaroids",
+    defaultNewWindow: false,
   },
 ];
 

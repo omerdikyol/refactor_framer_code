@@ -148,10 +148,12 @@ export default function DraggableBackground(props: any) {
               x={x}
               dotX={config.dotX}
               dotY={config.dotY}
-              linkUrl={props[config.linkProp] || config.defaultLink}
+              targetURL={props[config.linkProp] || config.defaultLink}
               hoverText={props[config.textProp] || config.defaultText}
               hoveredDot={hoveredDot}
               setHoveredDot={setHoveredDot}
+              isVisible={config.visibleProp ? props[config.visibleProp] : config.defaultVisible !== false}
+              isNewWindow={config.newWindowProp ? props[config.newWindowProp] : config.defaultNewWindow === true}
             />
           ))}
         </>
@@ -190,6 +192,22 @@ const createControls = () => {
       title: `${config.defaultText} Text`,
       defaultValue: config.defaultText,
     };
+    
+    if (config.visibleProp) {
+      controls[config.visibleProp] = {
+        type: ControlType.Boolean,
+        title: `${config.defaultText} Visible`,
+        defaultValue: config.defaultVisible !== false,
+      };
+    }
+    
+    if (config.newWindowProp) {
+      controls[config.newWindowProp] = {
+        type: ControlType.Boolean,
+        title: `${config.defaultText} New Window`,
+        defaultValue: config.defaultNewWindow === true,
+      };
+    }
   });
 
   return controls;
