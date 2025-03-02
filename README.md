@@ -34,18 +34,28 @@ To add a new dot or modify an existing one:
 1. Edit the `dotConfigs.ts` file to add or modify a dot configuration:
    ```typescript
    {
-     id: "newdot",          // Unique identifier
-     number: 14,            // Unique number (for hover state)
-     dotX: 1000,            // X coordinate on the 2172x918 background
-     dotY: 500,             // Y coordinate on the 2172x918 background
-     linkProp: "linkNewDot", // Property name for the link URL
-     defaultLink: "#",      // Default URL
-     textProp: "textNewDot", // Property name for the hover text
-     defaultText: "New Dot", // Default text
+     id: "newdot",             // Unique identifier
+     number: 14,               // Unique number (for hover state)
+     dotX: 1000,               // X coordinate on the 2172x918 background
+     dotY: 500,                // Y coordinate on the 2172x918 background
+     linkProp: "linkNewDot",   // Property name for the link URL
+     defaultLink: "#",         // Default URL
+     textProp: "textNewDot",   // Property name for the hover text
+     defaultText: "New Dot",   // Default text
+     visibleProp: "visibleNewDot", // Property name for visibility toggle
+     defaultVisible: true,     // Whether the dot is visible by default
+     newWindowProp: "newWindowNewDot", // Property name for new window toggle
+     defaultNewWindow: false,  // Whether to open links in new window by default
    }
    ```
 
-2. Update the `createControls` function in `DraggableBackground.tsx` to add property controls for the new dot (this is now done automatically based on the dotConfigs).
+2. All property controls in `DraggableBackground.tsx` are automatically generated based on the configurations in `dotConfigs.ts`, so no additional code changes are needed after adding a new dot.
+
+3. To modify an existing dot, you can directly edit its properties in the `dotConfigs.ts` file:
+   - Change `defaultLink` to update the URL
+   - Change `defaultText` to update the tooltip text
+   - Set `defaultVisible` to `false` to hide a dot
+   - Set `defaultNewWindow` to `true` to make links open in a new window
 
 ## Features
 
@@ -61,3 +71,11 @@ To add a new dot or modify an existing one:
 - Dots are positioned absolutely on the background and scale/position correctly as the background is dragged.
 - Tooltips appear on hover (desktop) or first tap (mobile), and links are followed on click (desktop) or second tap (mobile).
 - All functionality from the original implementation is preserved while improving code organization and maintainability.
+
+## Screenshots
+
+![Screenshot 1](screenshots/SCR-20250302-nxhf.jpeg)
+
+![Screenshot 2](screenshots/SCR-20250302-nxih.jpeg)
+
+![Screenshot 3](screenshots/SCR-20250302-nxlf.jpeg)
