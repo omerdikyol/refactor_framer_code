@@ -148,12 +148,12 @@ export default function DraggableBackground(props: any) {
               x={x}
               dotX={config.dotX}
               dotY={config.dotY}
-              targetURL={props[config.linkProp] || config.defaultLink}
-              hoverText={props[config.textProp] || config.defaultText}
+              targetURL={config.defaultLink}
+              hoverText={config.defaultText}
               hoveredDot={hoveredDot}
               setHoveredDot={setHoveredDot}
-              isVisible={config.visibleProp ? props[config.visibleProp] : config.defaultVisible !== false}
-              isNewWindow={config.newWindowProp ? props[config.newWindowProp] : config.defaultNewWindow === true}
+              isVisible={config.defaultVisible !== false}
+              isNewWindow={config.defaultNewWindow === true}
             />
           ))}
         </>

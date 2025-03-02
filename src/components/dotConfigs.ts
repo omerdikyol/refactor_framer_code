@@ -10,21 +10,21 @@ export interface DotConfig {
   dotX: number;
   /** Y coordinate on the background image */
   dotY: number;
-  /** Property name for the link URL in the props object */
+  /** Property name for the link URL in the props object (for Framer UI) */
   linkProp: string;
-  /** Default URL if the prop is not provided */
+  /** URL for the dot to navigate to when clicked */
   defaultLink: string;
-  /** Property name for the hover text in the props object */
+  /** Property name for the hover text in the props object (for Framer UI) */
   textProp: string;
-  /** Default text if the prop is not provided */
+  /** Text to display in the tooltip */
   defaultText: string;
-  /** Property name for the visibility in the props object */
+  /** Property name for the visibility in the props object (for Framer UI) */
   visibleProp?: string;
-  /** Default visibility if the prop is not provided */
+  /** Whether the dot is visible */
   defaultVisible?: boolean;
-  /** Property name for opening in new window in the props object */
+  /** Property name for opening in new window in the props object (for Framer UI) */
   newWindowProp?: string;
-  /** Default new window setting if the prop is not provided */
+  /** Whether to open the URL in a new window */
   defaultNewWindow?: boolean;
 }
 
@@ -35,7 +35,11 @@ export interface DotConfig {
  * 1. Add a new entry to this array
  * 2. Use a unique id and number
  * 3. Set dotX and dotY coordinates based on the 2172x918 background image
- * 4. Add corresponding property controls in the DraggableBackground component
+ * 4. Configure the dot's properties directly in this file:
+ *    - defaultLink: The URL to navigate to when clicked
+ *    - defaultText: The text to show in the tooltip
+ *    - defaultVisible: Set to false to hide the dot
+ *    - defaultNewWindow: Set to true to open links in a new window
  */
 const dotConfigs: DotConfig[] = [
   {
@@ -44,13 +48,13 @@ const dotConfigs: DotConfig[] = [
     dotX: 1800,
     dotY: 120,
     linkProp: "linkScholarship",
-    defaultLink: "#",
+    defaultLink: "https://example.com/scholarship",  // Change this URL directly
     textProp: "textScholarship",
-    defaultText: "Scholarship",
+    defaultText: "Scholarship",  // Change this text directly
     visibleProp: "visibleScholarship",
-    defaultVisible: true,
+    defaultVisible: true,  // Set to false to hide this dot
     newWindowProp: "newWindowScholarship",
-    defaultNewWindow: false,
+    defaultNewWindow: true,  // Set to true to open in new window
   },
   {
     id: "2025poster",
@@ -58,11 +62,11 @@ const dotConfigs: DotConfig[] = [
     dotX: 1500,
     dotY: 135,
     linkProp: "link2025Poster",
-    defaultLink: "#",
+    defaultLink: "https://example.com/poster",
     textProp: "text2025Poster",
     defaultText: "2025 Poster",
     visibleProp: "visible2025Poster",
-    defaultVisible: true,
+    defaultVisible: false,  // This dot will be hidden
     newWindowProp: "newWindow2025Poster",
     defaultNewWindow: false,
   },
